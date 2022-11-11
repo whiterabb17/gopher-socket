@@ -139,8 +139,8 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
 ```go
     //connect to server, you can use your own transport settings
 	c, err := gosocketio.Dial(
-		gosocketio.GetUrl("localhost", 80, false),
-		transport.GetDefaultWebsocketTransport(), "?Request=Headers&ForWeb=Call"
+		gosocketio.GetUrl("localhost", 80, false, "&Request=Headers&ForWeb=Call (Can be empty)"),
+		transport.GetDefaultWebsocketTransport(),
 	)
 
 	//do something, handlers and functions are same as server ones
