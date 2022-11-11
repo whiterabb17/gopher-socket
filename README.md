@@ -9,10 +9,10 @@ Examples directory contains simple client and server.
 
 ```go
 	//create
-	server := gosocketio.NewServer(transport.GetDefaultWebsocketTransport())
+	server := gophersocket.NewServer(transport.GetDefaultWebsocketTransport())
 
 	//handle connected
-	server.On(gosocketio.OnConnection, func(c *gosocketio.Channel) {
+	server.On(gophersocket.OnConnection, func(c *gophersocket.Channel) {
 		log.Println("New client connected")
 		//join them to room
 		c.Join("chat")
@@ -24,7 +24,7 @@ Examples directory contains simple client and server.
 	}
 
 	//handle custom event
-	server.On("send", func(c *gosocketio.Channel, msg Message) string {
+	server.On("send", func(c *gophersocket.Channel, msg Message) string {
 		//send event to all in room
 		c.BroadcastTo("chat", "message", msg)
 		return "OK"
@@ -66,12 +66,12 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
 ```go
     //create server instance, you can setup transport parameters or get the default one
     //look at websocket.go for parameters description
-	server := gosocketio.NewServer(transport.GetDefaultWebsocketTransport())
+	server := gophersocket.NewServer(transport.GetDefaultWebsocketTransport())
 
 	// --- caller is default handlers
 
 	//on connection handler, occurs once for each connected client
-	server.On(gosocketio.OnConnection, func(c *gosocketio.Channel, args interface{}) {
+	server.On(gophersocket.OnConnection, func(c *gophersocket.Channel, args interface{}) {
 	    //client id is unique
 		log.Println("New client connected, client id is ", c.Id())
 
@@ -87,7 +87,7 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
 	//on disconnection handler, if client hangs connection unexpectedly, it will still occurs
 	//you can omit function args if you do not need them
 	//you can return string value for ack, or return nothing for emit
-	server.On(gosocketio.OnDisconnection, func(c *gosocketio.Channel) {
+	server.On(gophersocket.OnDisconnection, func(c *gophersocket.Channel) {
 		//caller is not necessary, client will be removed from rooms
 		//automatically on disconnect
 		//but you can remove client from room whenever you need to
@@ -96,14 +96,14 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
 		log.Println("Disconnected")
 	})
 	//error catching handler
-	server.On(gosocketio.OnError, func(c *gosocketio.Channel) {
+	server.On(gophersocket.OnError, func(c *gophersocket.Channel) {
 		log.Println("Error occurs")
 	})
 
 	// --- caller is custom handler
 
 	//custom event handler
-	server.On("handle something", func(c *gosocketio.Channel, channel Channel) string {
+	server.On("handle something", func(c *gophersocket.Channel, channel Channel) string {
 		log.Println("Something successfully handled")
 
 		//you can return result of handler, in caller case
@@ -138,8 +138,8 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
 
 ```go
     //connect to server, you can use your own transport settings
-	c, err := gosocketio.Dial(
-		gosocketio.GetUrl("localhost", 80, false, "&Request=Headers&ForWeb=Call (Can be empty)"),
+	c, err := gophersocket.Dial(
+		gophersocket.GetUrl("localhost", 80, false, "&Request=Headers&ForWeb=Call (Can be empty)"),
 		transport.GetDefaultWebsocketTransport(),
 	)
 
