@@ -1,10 +1,10 @@
-package gosocketio
+package gophersocket
 
 import (
 	"net"
 	"strconv"
 
-	"github.com/whiterabb17/gosf-socketio/transport"
+	"github.com/whiterabb17/gopher-socket/transport"
 )
 
 const (

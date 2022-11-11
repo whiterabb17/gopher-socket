@@ -1,11 +1,11 @@
-package gosocketio
+package gophersocket
 
 import (
 	"encoding/json"
 	"reflect"
 	"sync"
 
-	"github.com/whiterabb17/gosf-socketio/protocol"
+	"github.com/whiterabb17/gopher-socket/protocol"
 )
 
 const (

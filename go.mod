@@ -1,4 +1,4 @@
-module github.com/whiterabb17/gosf-socketio
+module github.com/whiterabb17/gopher-socket
 
 go 1.18
 

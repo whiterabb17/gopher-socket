@@ -1,4 +1,4 @@
-package gosocketio
+package gophersocket
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/whiterabb17/gosf-socketio/protocol"
+	"github.com/whiterabb17/gopher-socket/protocol"
 )
 
 var (

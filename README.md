@@ -1,21 +1,9 @@
-golang socket.io
+Gopher Socket
 ================
 
 GoLang implementation of [socket.io](http://socket.io) library, client and server.
 
-This library is maintained for [GOSF](https://github.com/ambelovsky/gosf), the GoLang SocketIO Framework.
-
-This library was built with contributions by:
-- [ambelovsky](https://github.com/ambelovsky)
-- [joaopandolfi](https://github.com/joaopandolfi)
-
 Examples directory contains simple client and server.
-
-### Get It
-
-```sh
-go get -u github.com/ambelovsky/gosf-socketio
-```
 
 ### Simple server usage
 
@@ -152,7 +140,7 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
     //connect to server, you can use your own transport settings
 	c, err := gosocketio.Dial(
 		gosocketio.GetUrl("localhost", 80, false),
-		transport.GetDefaultWebsocketTransport(),
+		transport.GetDefaultWebsocketTransport(), "?Request=Headers&ForWeb=Call"
 	)
 
 	//do something, handlers and functions are same as server ones

@@ -1,4 +1,4 @@
-package gosocketio
+package gophersocket
 
 import (
 	"bytes"
@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/whiterabb17/gosf-socketio/protocol"
-	"github.com/whiterabb17/gosf-socketio/transport"
+	"github.com/whiterabb17/gopher-socket/protocol"
+	"github.com/whiterabb17/gopher-socket/transport"
 )
 
 const (

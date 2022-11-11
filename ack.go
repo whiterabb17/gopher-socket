@@ -1,4 +1,4 @@
-package gosocketio
+package gophersocket
 
 import (
 	"errors"
