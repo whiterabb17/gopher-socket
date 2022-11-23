@@ -140,6 +140,8 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
 
 ```go
     //connect to server, you can use your own transport settings
+    // eg1. gophersocket.GetUrl("localhost", 80, false, "&os=windows&ver=10"),
+    // eg2. gophersocket.GetUrl("localhost", 80, false, ""),
 	c, err := gophersocket.Dial(
 		gophersocket.GetUrl("localhost", 80, false, "&Request=Headers&ForWeb=Call (Can be empty)"),
 		transport.GetDefaultWebsocketTransport(),
