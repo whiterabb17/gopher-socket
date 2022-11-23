@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/whiterabb17/gopher-socket/badge)](https://www.codefactor.io/repository/github/whiterabb17/gopher-socket)
+
 Gopher Socket
 ================
 
